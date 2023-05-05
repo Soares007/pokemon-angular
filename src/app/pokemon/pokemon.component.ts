@@ -39,4 +39,18 @@ export class PokemonComponent implements OnInit {
     this.service.pokemonId--;
     this.loadPokemon();
   }
+
+  calculateProgressBarWidth(baseStat: number): string {
+    return ((baseStat / 255) * 100) + '%';
+    }
+
+    getStatClass(baseStat: number): string {
+      if (baseStat < 50) {
+        return 'low';
+      } else if (baseStat < 100) {
+        return 'medium';
+      } else {
+        return 'high';
+      }
+    }
 }

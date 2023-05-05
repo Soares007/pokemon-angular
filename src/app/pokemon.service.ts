@@ -15,4 +15,8 @@ export class PokemonService {
   getPokemon(): Observable<Pokemon> {
     return this.http.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${this.pokemonId}`);
   }
+
+  getStats(): Observable<Pokemon> {
+    return this.http.get<Pokemon>(``)
+  }
 }

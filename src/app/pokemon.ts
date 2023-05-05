@@ -11,4 +11,10 @@ export interface Pokemon {
         }
     }
   base_experience: number;
+  stats: {
+    base_stat: number;
+    stat: {
+      name: string;
+    };
+  }[];
   }

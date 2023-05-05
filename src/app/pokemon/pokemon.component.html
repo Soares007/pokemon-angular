@@ -6,8 +6,6 @@
     <div *ngFor="let name of pokeName()" class="card-title display-6 mt-2 mb-6 text-danger">
       {{name | titlecase}}
     </div>
-
-
     <div class="mt-3">
       <img [src]="poke.sprites.other.home.front_default" width="400px" class="img-fluid">
       <div class="mt-3">
@@ -24,12 +22,31 @@
           {{poke.base_experience}}
         </span>
       </div>
-
       <div (click)="antPoke()" class="col-4 btn btn-danger mt-2" style="margin-left: 15px;">
         Anterior
       </div>
       <div (click)="proxPoke()" class="col-4 btn btn-primary mt-2" style="margin-left: 15px;">
         Próximo
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card col position-absolute top-50 end-25 translate-middle bg-info">
+  <div class="card-body bg-light shadow-lg rounded">
+    <div *ngFor="let stat of poke?.stats" class="text-center">
+      <div class="stat-bar">
+        <div class="stat-name">
+          {{ stat.stat.name | titlecase }}
+        </div>
+        <div class="stat-progress">
+          <div class="progress" [style.width.%]="calculateProgressBarWidth(stat.base_stat)"
+            [ngClass]="getStatClass(stat.base_stat)">
+            <div class="status">
+              {{ stat.base_stat }}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
