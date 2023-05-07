@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<div class="card col position-absolute top-50 end-25 translate-middle bg-info">
+<div class="card col position-absolute top-50 translate-middle bg-info ms-5">
   <div class="card-body bg-light shadow-lg rounded">
     <div *ngFor="let stat of poke?.stats" class="text-center">
       <div class="stat-bar">
@@ -48,6 +48,24 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="card col position-absolute top-50 end-0 translate-middle-y bg-info me-3">
+  <div class="card-body bg-light shadow-lg rounded">
+    <div class="card-title">
+      Abilities
+    </div>
+    <div *ngFor="let info of poke?.abilities">
+      {{info.slot}} -
+      <span>{{info.ability.name | titlecase}}</span>
+    </div>
+    <div class="display-7 mt-2">
+      Type
+    </div>
+    <div class="mt-2" *ngFor="let tipo of poke?.types">
+      {{tipo.slot}} - <span>{{tipo.type.name | titlecase}}</span>
     </div>
   </div>
 </div>
