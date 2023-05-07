@@ -10,7 +10,7 @@ export class PokemonService {
   constructor( private http: HttpClient ) {
 
   }
-  pokemonId: number = Math.floor(Math.random() * (1010 + 1) + 1);
+  pokemonId: number = 1;
 
   getPokemon(): Observable<Pokemon> {
     return this.http.get<Pokemon>(`https://pokeapi.co/api/v2/pokemon/${this.pokemonId}`);
